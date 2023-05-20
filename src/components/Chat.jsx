@@ -6,8 +6,8 @@ function Chat() {
             <h1 className="text-xl font-bold self-start p-2 w-full border-solid border-b border-gray-200 shadow h-[50px]">Chat History</h1>
             <section className="history h-[517px]"></section>
             <div className="inputs flex flex-row items-center w-full h-[50px]">
-                <input type="text" placeholder='Type your message' className='bg-gray-100 w-full h-full p-2 text-black focus:outline-none'/>
-                <button className='self-stretch bg-gray-100'>
+                <input type="text" placeholder='Type your message' className='bg-gray-100 w-full h-full p-2 text-black focus:outline-none rounded'/>
+                <button className='self-stretch bg-gray-100 rounded'>
                     <FiSend className='w-[50px] h-full p-4 mx-auto hover:scale-125 text-gray-500'/>
                 </button>
             </div>
