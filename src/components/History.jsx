@@ -1,8 +1,9 @@
 import ChatBubble from "./ChatBubble";
-function History() {
+
+function History({ message }) {
   return (
     <section className="history h-[517px]">
-      <ChatBubble />
+      <ChatBubble message={message} />
     </section>
   );
 }
