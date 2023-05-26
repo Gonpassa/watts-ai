@@ -15,15 +15,15 @@ function InputField({ onSubmitMessage }) {
   };
 
   const buttonClassName = `self-stretch ${
-    !message ? "bg-gray-100" : "bg-blue-500"
-  }  w-1/6 md: w1/6`;
+    !message ? "bg-gray-100" : "bg-primaryBtn"
+  }`;
 
   return (
     <form
       className="inputs flex flex-row items-center w-full h-[50px]"
       onSubmit={handleSubmit}
     >
-      <div className="w-5/6 h-full flex flex-wrap">
+      <div className="w-[95%] mr-auto h-full flex flex-wrap">
         <input
           type="text"
           placeholder="Type your message"
@@ -39,7 +39,7 @@ function InputField({ onSubmitMessage }) {
         disabled={!message}
         className={buttonClassName}
       >
-        <FiSend className="w-[50px] h-full p-4 mx-auto hover:scale-125 text-gray-600" />
+        <FiSend className="w-[50px] h-full p-4 mx-auto hover:scale-125 text-background" />
       </button>
     </form>
   );

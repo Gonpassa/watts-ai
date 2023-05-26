@@ -4,9 +4,11 @@ import { useState } from "react";
 
 function Chat() {
   const [messages, setMessages] = useState([]);
+  const [result, setResult] = useState([]);
 
   const addMessage = (message) => {
     setMessages([...messages, message]);
+    setResult([...result, result]);
   };
 
   return (
@@ -14,7 +16,7 @@ function Chat() {
       <h1 className="text-xl font-bold self-start p-2 w-full border-solid border-b border-gray-200 shadow h-[50px]">
         Chat History
       </h1>
-      <History messages={messages} />
+      <History messages={messages} result={result} />
       <InputField onSubmitMessage={addMessage} />
     </section>
   );
