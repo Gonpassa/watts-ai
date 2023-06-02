@@ -8,7 +8,9 @@ function History({ messages, result }) {
     </>
   ));
 
-  return <section className="history h-[517px]">{bubbles}</section>;
+  return (
+    <section className="history h-[517px] overflow-auto">{bubbles}</section>
+  );
 }
 
 export default History;
