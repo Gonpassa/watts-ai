@@ -1,11 +1,12 @@
 import InputField from "./InputField";
 import History from "./History";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function Chat() {
   const [messages, setMessages] = useState([]);
   const [result, setResult] = useState([]);
-
+  const historyRef = useRef(null);
+  //Finish historyRef UseEffect^
   const addMessage = (message) => {
     setMessages([...messages, message]);
     setResult([...result, result]);
@@ -16,7 +17,7 @@ function Chat() {
       <h1 className="text-xl font-bold self-start p-2 w-full border-solid border-b border-gray-200 shadow h-[50px] text-center">
         Chat History
       </h1>
-      <History messages={messages} result={result} />
+      <History messages={messages} result={result} ref={historyRef} />
       <InputField onSubmitMessage={addMessage} />
     </section>
   );
