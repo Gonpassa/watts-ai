@@ -1,15 +1,23 @@
 import InputField from "./InputField";
 import History from "./History";
-import { useRef, useState } from "react";
+import { useState, useEffect } from "react";
 
 function Chat() {
   const [messages, setMessages] = useState([]);
-  const [result, setResult] = useState([]);
-  const historyRef = useRef(null);
-  //Finish historyRef UseEffect^
+  const [assistantResponse, setAssistantResponse] = useState([]);
+  const [conversation, setConversation] = useState(
+    JSON.stringify(localStorage.getItem("conversation") || [])
+  );
+
   const addMessage = (message) => {
-    setMessages([...messages, message]);
-    setResult([...result, result]);
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { role: "user", content: message },
+    ]);
+    setConversation((prevConversation) => [
+      ...prevConversation,
+      { role: "user", content: message },
+    ]);
   };
 
   return (
@@ -17,7 +25,11 @@ function Chat() {
       <h1 className="text-xl font-bold self-start p-2 w-full border-solid border-b border-gray-200 shadow h-[50px] text-center">
         Chat History
       </h1>
-      <History messages={messages} result={result} ref={historyRef} />
+      <History
+        messages={messages}
+        assistantResponse={assistantResponse}
+        conversation={conversation}
+      />
       <InputField onSubmitMessage={addMessage} />
     </section>
   );
