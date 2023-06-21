@@ -2,20 +2,19 @@ import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 
 function InputField({ onSubmitMessage }) {
-  const [message, setMessage] = useState("");
+  const [input, setInput] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    document.querySelector("input").value = "";
-    onSubmitMessage(message);
-    setMessage("");
+    onSubmitMessage(input);
+    setInput("");
   };
 
   const handleChange = (event) => {
-    setMessage(event.target.value);
+    setInput(event.target.value);
   };
 
-  const buttonClassName = `self-stretch ${
-    !message ? "bg-gray-100" : "bg-primaryBtn"
+  const buttonClassName = `self-stretch min-w-[5%] ${
+    !input ? "bg-gray-100" : "bg-primaryBtn"
   }`;
 
   return (
@@ -31,12 +30,13 @@ function InputField({ onSubmitMessage }) {
           name="msg"
           onChange={handleChange}
           autoComplete="off"
+          value={input}
         />
       </div>
       <button
         type="submit"
         id="btn"
-        disabled={!message}
+        disabled={!input}
         className={buttonClassName}
       >
         <FiSend className="w-[50px] h-full p-4 mx-auto hover:scale-125 text-background" />
