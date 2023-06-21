@@ -26,7 +26,7 @@ function InputField({ onSubmitMessage }) {
         <input
           type="text"
           placeholder="Type your message"
-          className="bg-gray-100 w-full h-full p-2 text-gray-700 focus:outline-none rounded"
+          className="bg-gray-100 w-full h-full p-2 text-gray-700 focus:outline-none rounded shadow"
           name="msg"
           onChange={handleChange}
           autoComplete="off"

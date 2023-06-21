@@ -1,4 +1,4 @@
-export default function ChatBubble({ message, id, role }) {
+export default function ChatBubble({ message, id }) {
   const style = {
     justifyContent: id % 2 ? "flex-end" : "flex-start",
   };

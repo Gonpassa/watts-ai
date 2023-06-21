@@ -1,7 +1,7 @@
 import ChatBubble from "./ChatBubble";
 
 function History({ messages, assistantResponse, conversation }) {
-  const bubbles = messages.map((message, index) => {
+  const bubbles = conversation.map((message, index) => {
     return (
       <ChatBubble
         key={index}
